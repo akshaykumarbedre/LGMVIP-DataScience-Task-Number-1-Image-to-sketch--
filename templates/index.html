@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload an Image</title>
+<style>
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  h1 {
+    color: #333;
+  }
+  form {
+    background: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  input[type='file'] {
+    margin-bottom: 1em;
+  }
+  input[type='submit'] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type='submit']:hover {
+    background-color: #4cae4c;
+  }
+  h1{padding: 10px;
+    
+  }
+
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    form.onsubmit = function(e) {
+      var fileInput = document.querySelector('input[type="file"]');
+      if(!fileInput.value) {
+        e.preventDefault(); // Prevent form submission
+        alert('Please select an image to upload.');
+      }
+    };
+  });
+</script>
+</head>
+<body>
+<h1>Convert Image to Sketch</h1>
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit" value="Convert">
+</form>
+</body>
+</html>
